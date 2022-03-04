@@ -24,17 +24,6 @@ sudo pip3 install -y flask
 sudo pip3 install -y flask-mysqldb
 ```
 
-## Run  
-```bash
-python3 -m venv <git-folder>
-cd <git-folder>
-source /bin/activate
-
-set FLASK_APP=main.py
-set FLASK_DEBUG=1
-flask run
-```
-
 # Credit  
 Complete credit goes to David Adams at [codeshack.io](https://codeshack.io/login-system-python-flask-mysql/)   
 This project is copied here with due permission and used for demo purpose only.
