@@ -8,11 +8,18 @@ app = Flask(__name__)
 # Change this to your secret key (can be anything, it's for extra protection)
 app.secret_key = '2ECDCD41F826E1771C06BB0E27A688FA07B25AC2'
 
+# Read db name
+connectionname = ''
+with open('db-name') as f:
+    connectionname = f.read()
+
 # Enter your database connection details below
-app.config['MYSQL_HOST'] = 'flask-mysql.cgoizygzdul5.eu-west-1.rds.amazonaws.com'
+app.config['MYSQL_HOST'] = connectionname
 app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = 'x00193210'
 app.config['MYSQL_DB'] = 'pythonlogin'
+
+print ("=> connecting to db: "+app.config['MYSQL_HOST'])
 
 # Intialize MySQL
 mysql = MySQL(app)
